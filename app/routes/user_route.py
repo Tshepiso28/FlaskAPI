@@ -11,7 +11,7 @@ def get_users():
 @user_blueprint.route('/add', methods=['POST'])
 def add_user():
     data = request.get_json()
-    UserController.add_user(data['first_name'], data['last_name'], data['email'], data['phone'])
+    UserController.add_user(data['name'], data['email'], data['password_hash'])
     return jsonify({'message': 'User added successfully'}), 201
 
 @user_blueprint.route('/delete/<int:user_id>', methods=['DELETE'])

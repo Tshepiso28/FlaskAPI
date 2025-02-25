@@ -12,12 +12,12 @@ class UserController:
         return users
 
     @staticmethod
-    def add_user(first_name, last_name, email, phone):
+    def add_user(name, email, password_hash):
         conn = get_db_connection()
         cur = conn.cursor()
         cur.execute(
-            'INSERT INTO users (first_name, last_name, email, phone) VALUES (%s, %s, %s, %s)',
-            (first_name, last_name, email, phone)
+            'INSERT INTO users (name, email, password_hash) VALUES (%s, %s, %s)',
+            (name, email, password_hash)
         )
         conn.commit()
         cur.close()

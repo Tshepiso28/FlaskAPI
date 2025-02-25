@@ -2,7 +2,7 @@ import psycopg2
 
 def get_db_connection():
     conn = psycopg2.connect(
-        dbname="apitest",
+        dbname="testapi",
         user="postgres",
         password="1017",
         host="localhost",
